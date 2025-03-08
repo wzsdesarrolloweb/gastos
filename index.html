@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor de Gastos</title>
+    
+    <!-- Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+              'fold': {'max': '4in'},
+              'mobile': {'min': '4in', 'max': '768px'},
+              'desktop': {'min': '769px'},
+            },
+            colors: {
+              green: {
+                100: '#dcfce7',
+                400: '#4ade80',
+                600: '#16a34a',
+                800: '#166534',
+              },
+              red: {
+                100: '#fee2e2',
+                400: '#f87171',
+                600: '#dc2626',
+                800: '#991b1b',
+              },
+              blue: {
+                100: '#dbeafe',
+                400: '#60a5fa',
+                600: '#2563eb',
+                800: '#1e40af',
+              },
+              orange: {
+                100: '#ffedd5',
+                400: '#fb923c',
+                600: '#ea580c',
+                800: '#9a3412',
+              },
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Estilos personalizados -->
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #f9fafb;
+        color: #1f2937;
+      }
+      
+      button {
+        transition: all 0.2s ease-in-out;
+      }
+      
+      input, select {
+        transition: border-color 0.2s ease-in-out;
+      }
+      
+      input:focus, select:focus {
+        outline: none;
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
