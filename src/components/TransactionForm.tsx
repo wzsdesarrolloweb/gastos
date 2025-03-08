@@ -15,7 +15,6 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
   const [type, setType] = useState<'income' | 'expense'>(transaction?.type || 'expense');
   const [description, setDescription] = useState(transaction?.description || '');
   const [amount, setAmount] = useState(transaction?.amount ? Math.abs(transaction.amount).toString() : '');
-  const [category, setCategory] = useState(transaction?.category || '');
   const [date, setDate] = useState(
     transaction?.date 
       ? new Date(transaction.date).toISOString().split('T')[0]
@@ -28,14 +27,12 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
       setType(transaction.type);
       setDescription(transaction.description || '');
       setAmount(Math.abs(transaction.amount).toString());
-      setCategory(transaction.category || '');
       setDate(new Date(transaction.date).toISOString().split('T')[0]);
     } else {
       // Resetear el formulario si no hay transacción (para creación)
       setType('expense');
       setDescription('');
       setAmount('');
-      setCategory('');
       setDate(new Date().toISOString().split('T')[0]);
     }
   }, [transaction]);
@@ -44,7 +41,6 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
     setType('expense');
     setDescription('');
     setAmount('');
-    setCategory('');
     setDate(new Date().toISOString().split('T')[0]);
   };
 

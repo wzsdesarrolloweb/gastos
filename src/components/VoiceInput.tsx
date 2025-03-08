@@ -37,7 +37,7 @@ export const VoiceInput: React.FC<VoiceInputProps> = ({ onTransactionRecognized 
       // Analizar el comando ultra simplificado
       const result = parseUltraSimpleCommand(text);
       
-      if (result.success) {
+      if (result.success && result.transaction) {
         // Crear la transacción
         onTransactionRecognized(result.transaction);
         setProcessingMessage(`¡${result.transaction.type === 'income' ? 'Ingreso' : 'Gasto'} de €${Math.abs(result.transaction.amount).toFixed(2)} creado!`);
